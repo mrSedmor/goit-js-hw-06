@@ -42,11 +42,13 @@ function createBoxesV2(amount) {
   boxes.replaceChildren(...elements);
 }
 
+function destroyBoxes() {
+  boxes.innerHTML = '';
+}
+
 createButton.addEventListener('click', () => {
   const boxesAmount = Number(numberInput.value);
   createBoxesV2(boxesAmount);
 });
 
-destroyButton.addEventListener('click', () => {
-  boxes.innerHTML = '';
-});
+destroyButton.addEventListener('click', destroyBoxes);
