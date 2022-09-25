@@ -6,10 +6,17 @@ function submitHandler(event) {
   const formEl = event.target;
   const elements = formEl.elements;
 
-  const data = {
-    email: elements.email.value.trim().toLowerCase(),
-    password: elements.password.value,
-  };
+  // Використовуємо FormData():
+  const formData = new FormData(event.currentTarget);
+  const data = Object.fromEntries(formData.entries());
+  data.email = data.email.trim().toLowerCase();
+
+  // або икористовуємо elements:
+
+  // const data = {
+  //   email: elements.email.value.trim().toLowerCase(),
+  //   password: elements.password.value,
+  // };
 
   for (const [key, value] of Object.entries(data)) {
     if (value !== '') continue;
