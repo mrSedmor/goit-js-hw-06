@@ -1,10 +1,10 @@
-const loginForm = document.querySelector('.login-form');
+const loginFormEl = document.querySelector('.login-form');
 
-function onSubmit(event) {
+function submitHandler(event) {
   event.preventDefault();
 
-  const form = event.currentTarget;
-  const elements = form.elements;
+  const formEl = event.target;
+  const elements = formEl.elements;
 
   const data = {
     email: elements.email.value.trim().toLowerCase(),
@@ -21,7 +21,7 @@ function onSubmit(event) {
   }
 
   console.log(data);
-  form.reset();
+  formEl.reset();
 }
 
-loginForm.addEventListener('submit', onSubmit);
+loginFormEl.addEventListener('submit', submitHandler);

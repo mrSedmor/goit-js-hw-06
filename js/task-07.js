@@ -1,10 +1,10 @@
-const fontSizeControl = document.querySelector('#font-size-control');
-const textSpan = document.querySelector('#text');
+const fontSizeControlEl = document.querySelector('#font-size-control');
+const textSpanEl = document.querySelector('#text');
 
 function updateFontSize() {
-  textSpan.style.fontSize = fontSizeControl.value + 'px';
+  textSpanEl.style.fontSize = fontSizeControlEl.value + 'px';
 }
 
 updateFontSize();
 
-fontSizeControl.addEventListener('input', updateFontSize);
+fontSizeControlEl.addEventListener('input', updateFontSize);
