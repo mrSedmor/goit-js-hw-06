@@ -13,7 +13,7 @@ const boxesEl = document.querySelector('#boxes');
 const INITIAL_SIZE = 30;
 const SIZE_INCREMENT = 10;
 
-function createBoxes(amount) {
+function createBoxesMarkup(amount) {
   const elements = [];
 
   let size = INITIAL_SIZE;
@@ -23,10 +23,11 @@ function createBoxes(amount) {
 
     size += SIZE_INCREMENT;
   }
-  boxesEl.innerHTML = elements.join('');
+
+  return elements.join('');
 }
 
-function createBoxesV2(amount) {
+function createBoxesArray(amount) {
   const elements = [];
 
   let size = INITIAL_SIZE;
@@ -39,7 +40,7 @@ function createBoxesV2(amount) {
 
     size += SIZE_INCREMENT;
   }
-  boxesEl.replaceChildren(...elements);
+  return elements;
 }
 
 function destroyBoxes() {
@@ -48,8 +49,9 @@ function destroyBoxes() {
 
 createButtonEl.addEventListener('click', () => {
   const boxesAmount = Number(numberInputEl.value);
-  // createBoxes(boxesAmount);
-  createBoxesV2(boxesAmount);
+
+  // boxesEl.innerHTML = createBoxesMarkup(boxesAmount);
+  boxesEl.replaceChildren(...createBoxesArray(boxesAmount));
 });
 
 destroyButtonEl.addEventListener('click', destroyBoxes);
