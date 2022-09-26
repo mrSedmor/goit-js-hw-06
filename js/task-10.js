@@ -13,20 +13,22 @@ const boxesEl = document.querySelector('#boxes');
 const INITIAL_SIZE = 30;
 const SIZE_INCREMENT = 10;
 
-function createBoxesMarkup(amount) {
-  const elements = [];
+// Можна створити розмітку за домопогою шаблонних строк
+// function createBoxesMarkup(amount) {
+//   const elements = [];
 
-  let size = INITIAL_SIZE;
-  for (let i = 0; i < amount; i += 1) {
-    const tagMarkup = `<div style="width:${size}px; height:${size}px; background-color:${getRandomHexColor()};"></div>`;
-    elements.push(tagMarkup);
+//   let size = INITIAL_SIZE;
+//   for (let i = 0; i < amount; i += 1) {
+//     const tagMarkup = `<div style="width:${size}px; height:${size}px; background-color:${getRandomHexColor()};"></div>`;
+//     elements.push(tagMarkup);
 
-    size += SIZE_INCREMENT;
-  }
+//     size += SIZE_INCREMENT;
+//   }
 
-  return elements.join('');
-}
+//   return elements.join('');
+// }
 
+// Або можна створити масив елементів DOM
 function createBoxesArray(amount) {
   const elements = [];
 

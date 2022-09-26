@@ -11,7 +11,7 @@ function submitHandler(event) {
   const data = Object.fromEntries(formData.entries());
   data.email = data.email.trim().toLowerCase();
 
-  // або икористовуємо elements:
+  // або Використовуємо elements:
 
   // const data = {
   //   email: elements.email.value.trim().toLowerCase(),
